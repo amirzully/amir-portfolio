@@ -221,81 +221,624 @@
 
 </section>
 
-    <section class="section shell" id="projects">
-      <div class="section-heading reveal">
-        <div>
-          <p class="section-kicker">03 — Selected Projects</p>
-          <h2>My Projects</h2>
-        </div>
-        <p>Selected for technical depth, system design, and practical engineering value.</p>
+<section class="section shell project-showcase-section" id="projects">
+
+  <!-- HEADER -->
+  <div class="project-showcase-header reveal">
+
+    <div>
+      <div class="section-kicker">
+        03 — Selected Projects
       </div>
 
-      <div class="project-grid">
-        <article class="project-card project-featured reveal" data-tilt>
-          <div class="project-topline">
-            <span class="project-index">01</span>
-            <span class="pill">Machine Learning</span>
-          </div>
-          <div>
-            <h3>Ethereum Gas Price Forecasting</h3>
-            <p>
-              A hybrid XGBoost–LSTM architecture designed to forecast Ethereum transaction fees 60 minutes ahead using on-chain and market data.
+      <h2>My Projects</h2>
+    </div>
+
+    <p>
+      Selected work across machine learning, AI automation,
+      embedded systems and intelligent engineering.
+    </p>
+
+  </div>
+
+
+  <!-- SLIDER -->
+  <div class="project-slider reveal">
+
+    <button
+      class="project-nav project-prev"
+      type="button"
+      aria-label="Previous project"
+    >
+      ←
+    </button>
+
+
+    <div class="project-slider-window">
+
+      <div class="project-slider-track">
+
+
+        <!-- ===================================================
+             PROJECT 01
+        ==================================================== -->
+        <article class="project-slide">
+
+          <div class="project-slide-content">
+
+            <div class="project-slide-top">
+
+              <span class="project-number">
+                01
+              </span>
+
+              <span class="project-category">
+                Machine Learning
+              </span>
+
+            </div>
+
+
+            <h3>
+              Ethereum Gas Price
+              Forecasting
+            </h3>
+
+
+            <p class="project-description">
+              Developed a hybrid XGBoost–LSTM machine learning
+              architecture to forecast Ethereum transaction fees
+              60 minutes in advance using historical blockchain
+              and market data.
             </p>
+
+
+            <div class="project-information">
+
+              <div>
+                <span class="project-info-label">
+                  Approach
+                </span>
+
+                <strong>
+                  Hybrid XGBoost + LSTM
+                </strong>
+              </div>
+
+
+              <div>
+                <span class="project-info-label">
+                  Data
+                </span>
+
+                <strong>
+                  8,337 hourly observations
+                </strong>
+              </div>
+
+
+              <div>
+                <span class="project-info-label">
+                  Engineering
+                </span>
+
+                <strong>
+                  30+ engineered features
+                </strong>
+              </div>
+
+            </div>
+
+
+            <div class="project-tools">
+
+              <span class="tools-label">
+                Tools & Methods
+              </span>
+
+              <div class="project-tags">
+                <span>Python</span>
+                <span>TensorFlow</span>
+                <span>Scikit-learn</span>
+                <span>XGBoost</span>
+                <span>LSTM</span>
+                <span>Time Series</span>
+              </div>
+
+            </div>
+
           </div>
-          <div class="project-metrics">
-            <span><strong>8,337</strong> hourly data points</span>
-            <span><strong>30+</strong> engineered features</span>
-            <span><strong>60 min</strong> forecast horizon</span>
+
+
+          <div class="project-slide-media">
+
+            <img
+              src="assets/project-ethereum.png"
+              alt="Ethereum Gas Price Forecasting project"
+            >
+
+            <div class="media-caption">
+              Final Year Project
+            </div>
+
           </div>
-          <div class="tag-list"><span>Python</span><span>TensorFlow</span><span>Scikit-learn</span><span>XGBoost</span><span>Time Series</span></div>
+
         </article>
 
-        <article class="project-card reveal" data-tilt>
-          <div class="project-topline">
-            <span class="project-index">02</span>
-            <span class="pill">AI Automation</span>
-          </div>
-          <div>
-            <h3>AI Customer Service Automator</h3>
-            <p>
-              Production-oriented RAG Telegram bot for customer inquiries and menu management, backed by vector search and cloud deployment.
+
+
+        <!-- ===================================================
+             PROJECT 02
+        ==================================================== -->
+        <article class="project-slide">
+
+          <div class="project-slide-content">
+
+            <div class="project-slide-top">
+
+              <span class="project-number">
+                02
+              </span>
+
+              <span class="project-category">
+                AI Automation
+              </span>
+
+            </div>
+
+
+            <h3>
+              AI Customer Service
+              Automator
+            </h3>
+
+
+            <p class="project-description">
+              Built a Retrieval-Augmented Generation customer
+              service system integrated with Telegram to automate
+              customer inquiries and menu-related information.
             </p>
+
+
+            <div class="project-information">
+
+              <div>
+                <span class="project-info-label">
+                  Architecture
+                </span>
+
+                <strong>
+                  Retrieval-Augmented Generation
+                </strong>
+              </div>
+
+
+              <div>
+                <span class="project-info-label">
+                  Vector Search
+                </span>
+
+                <strong>
+                  PostgreSQL + pgvector
+                </strong>
+              </div>
+
+
+              <div>
+                <span class="project-info-label">
+                  Deployment
+                </span>
+
+                <strong>
+                  Cloud deployment via Render
+                </strong>
+              </div>
+
+            </div>
+
+
+            <div class="project-tools">
+
+              <span class="tools-label">
+                Tools & Methods
+              </span>
+
+              <div class="project-tags">
+                <span>Python</span>
+                <span>LangChain</span>
+                <span>RAG</span>
+                <span>Supabase</span>
+                <span>pgvector</span>
+                <span>Flask</span>
+              </div>
+
+            </div>
+
           </div>
-          <div class="project-note">Semantic inventory search with PostgreSQL + pgvector.</div>
-          <div class="tag-list"><span>LangChain</span><span>Gemini</span><span>Supabase</span><span>pgvector</span><span>Flask</span></div>
+
+
+          <div class="project-slide-media">
+
+            <img
+              src="assets/project-rag.png"
+              alt="AI Customer Service Automator project"
+            >
+
+            <div class="media-caption">
+              AI Automation System
+            </div>
+
+          </div>
+
         </article>
 
-        <article class="project-card reveal" data-tilt>
-          <div class="project-topline">
-            <span class="project-index">03</span>
-            <span class="pill">Embedded / RTOS</span>
-          </div>
-          <div>
-            <h3>Real-Time Petrol Station Simulation</h3>
-            <p>
-              Multi-pump simulation built across three STM32F446RE boards with FreeRTOS, interrupts, semaphores, and synchronized fuel monitoring.
+
+
+        <!-- ===================================================
+             PROJECT 03
+        ==================================================== -->
+        <article class="project-slide">
+
+          <div class="project-slide-content">
+
+            <div class="project-slide-top">
+
+              <span class="project-number">
+                03
+              </span>
+
+              <span class="project-category">
+                Embedded / RTOS
+              </span>
+
+            </div>
+
+
+            <h3>
+              Real-Time Petrol
+              Station Simulation
+            </h3>
+
+
+            <p class="project-description">
+              Designed a real-time multi-pump petrol station
+              simulation using STM32 microcontrollers and FreeRTOS,
+              coordinating concurrent processes while preventing
+              race conditions.
             </p>
+
+
+            <div class="project-information">
+
+              <div>
+                <span class="project-info-label">
+                  Hardware
+                </span>
+
+                <strong>
+                  3 × STM32F446RE
+                </strong>
+              </div>
+
+
+              <div>
+                <span class="project-info-label">
+                  Concurrency
+                </span>
+
+                <strong>
+                  13 simultaneous threads
+                </strong>
+              </div>
+
+
+              <div>
+                <span class="project-info-label">
+                  Method
+                </span>
+
+                <strong>
+                  Semaphores + Interrupts
+                </strong>
+              </div>
+
+            </div>
+
+
+            <div class="project-tools">
+
+              <span class="tools-label">
+                Tools & Methods
+              </span>
+
+              <div class="project-tags">
+                <span>C / C++</span>
+                <span>STM32</span>
+                <span>FreeRTOS</span>
+                <span>ISR</span>
+                <span>Multithreading</span>
+                <span>Semaphores</span>
+              </div>
+
+            </div>
+
           </div>
-          <div class="project-note">Managed 13 concurrent threads without race-condition conflicts.</div>
-          <div class="tag-list"><span>STM32</span><span>FreeRTOS</span><span>C/C++</span><span>ISR</span><span>Semaphores</span></div>
+
+
+          <div class="project-slide-media">
+
+            <img
+              src="assets/project-rtos.png"
+              alt="Real-Time Petrol Station Simulation"
+            >
+
+            <div class="media-caption">
+              Embedded Systems
+            </div>
+
+          </div>
+
         </article>
 
-        <article class="project-card reveal" data-tilt>
-          <div class="project-topline">
-            <span class="project-index">04</span>
-            <span class="pill">IoT / Sustainability</span>
-          </div>
-          <div>
-            <h3>Solar-Powered Smart Irrigation</h3>
-            <p>
-              Off-grid smart irrigation prototype using Arduino and Blynk to process live soil and environmental sensor data for automated water control.
+
+
+        <!-- ===================================================
+             PROJECT 04
+        ==================================================== -->
+        <article class="project-slide">
+
+          <div class="project-slide-content">
+
+            <div class="project-slide-top">
+
+              <span class="project-number">
+                04
+              </span>
+
+              <span class="project-category">
+                Data Science
+              </span>
+
+            </div>
+
+
+            <h3>
+              Tourist Arrival
+              Forecasting
+            </h3>
+
+
+            <p class="project-description">
+              Developed a multivariate Long Short-Term Memory
+              neural network to forecast international tourist
+              arrivals across major Malaysian states using
+              historical tourism data.
             </p>
+
+
+            <div class="project-information">
+
+              <div>
+                <span class="project-info-label">
+                  Model
+                </span>
+
+                <strong>
+                  Multivariate LSTM
+                </strong>
+              </div>
+
+
+              <div>
+                <span class="project-info-label">
+                  Coverage
+                </span>
+
+                <strong>
+                  6 Malaysian states
+                </strong>
+              </div>
+
+
+              <div>
+                <span class="project-info-label">
+                  Domain
+                </span>
+
+                <strong>
+                  Time-Series Forecasting
+                </strong>
+              </div>
+
+            </div>
+
+
+            <div class="project-tools">
+
+              <span class="tools-label">
+                Tools & Methods
+              </span>
+
+              <div class="project-tags">
+                <span>Python</span>
+                <span>TensorFlow</span>
+                <span>LSTM</span>
+                <span>Pandas</span>
+                <span>NumPy</span>
+              </div>
+
+            </div>
+
           </div>
-          <div class="project-note">Built for sustainable agrivoltaic farming environments.</div>
-          <div class="tag-list"><span>Arduino</span><span>Blynk IoT</span><span>Sensors</span><span>Automation</span></div>
+
+
+          <div class="project-slide-media">
+
+            <img
+              src="assets/project-tourism.png"
+              alt="Tourist Arrival Forecasting project"
+            >
+
+            <div class="media-caption">
+              Time-Series Forecasting
+            </div>
+
+          </div>
+
         </article>
+
+
+
+        <!-- ===================================================
+             PROJECT 05
+        ==================================================== -->
+        <article class="project-slide">
+
+          <div class="project-slide-content">
+
+            <div class="project-slide-top">
+
+              <span class="project-number">
+                05
+              </span>
+
+              <span class="project-category">
+                IoT / Hardware
+              </span>
+
+            </div>
+
+
+            <h3>
+              Solar-Powered Smart
+              Irrigation
+            </h3>
+
+
+            <p class="project-description">
+              Developed an off-grid smart irrigation prototype
+              designed for agrivoltaic environments, using sensor
+              data to automate irrigation and improve water usage.
+            </p>
+
+
+            <div class="project-information">
+
+              <div>
+                <span class="project-info-label">
+                  Platform
+                </span>
+
+                <strong>
+                  Arduino
+                </strong>
+              </div>
+
+
+              <div>
+                <span class="project-info-label">
+                  Monitoring
+                </span>
+
+                <strong>
+                  Blynk IoT
+                </strong>
+              </div>
+
+
+              <div>
+                <span class="project-info-label">
+                  System
+                </span>
+
+                <strong>
+                  Solar-powered irrigation
+                </strong>
+              </div>
+
+            </div>
+
+
+            <div class="project-tools">
+
+              <span class="tools-label">
+                Tools & Methods
+              </span>
+
+              <div class="project-tags">
+                <span>Arduino</span>
+                <span>Blynk</span>
+                <span>IoT</span>
+                <span>Sensors</span>
+                <span>Solar Energy</span>
+              </div>
+
+            </div>
+
+          </div>
+
+
+          <div class="project-slide-media">
+
+            <img
+              src="assets/project-irrigation.png"
+              alt="Solar-Powered Smart Irrigation project"
+            >
+
+            <div class="media-caption">
+              IoT Prototype
+            </div>
+
+          </div>
+
+        </article>
+
+
       </div>
-    </section>
+
+    </div>
+
+
+    <button
+      class="project-nav project-next"
+      type="button"
+      aria-label="Next project"
+    >
+      →
+    </button>
+
+  </div>
+
+
+  <!-- BOTTOM NAV -->
+  <div class="project-slider-footer">
+
+    <div class="project-pagination">
+      <span class="current-project">
+        01
+      </span>
+
+      <span>/</span>
+
+      <span class="total-projects">
+        05
+      </span>
+    </div>
+
+
+    <div class="project-dots">
+
+      <button class="project-dot active" data-slide="0"></button>
+      <button class="project-dot" data-slide="1"></button>
+      <button class="project-dot" data-slide="2"></button>
+      <button class="project-dot" data-slide="3"></button>
+      <button class="project-dot" data-slide="4"></button>
+
+    </div>
+
+  </div>
+
+</section>
 
   <section class="section shell skills-accordion-section" id="skills">
 

@@ -78,3 +78,138 @@ if (!reduceMotion) {
 }
 
 document.getElementById('year').textContent = new Date().getFullYear();
+
+/* =========================================================
+   PROJECT SLIDER
+========================================================= */
+
+const projectTrack =
+  document.querySelector(".project-slider-track");
+
+const projectSlides =
+  document.querySelectorAll(".project-slide");
+
+const projectPrev =
+  document.querySelector(".project-prev");
+
+const projectNext =
+  document.querySelector(".project-next");
+
+const projectDots =
+  document.querySelectorAll(".project-dot");
+
+const currentProject =
+  document.querySelector(".current-project");
+
+
+let projectIndex = 0;
+
+
+function updateProjectSlider() {
+
+  projectTrack.style.transform =
+    `translateX(-${projectIndex * 100}%)`;
+
+
+  projectDots.forEach((dot, index) => {
+
+    dot.classList.toggle(
+      "active",
+      index === projectIndex
+    );
+
+  });
+
+
+  currentProject.textContent =
+    String(projectIndex + 1)
+      .padStart(2, "0");
+
+}
+
+
+/* NEXT */
+
+projectNext.addEventListener(
+  "click",
+  () => {
+
+    projectIndex =
+      (projectIndex + 1)
+      % projectSlides.length;
+
+    updateProjectSlider();
+
+  }
+);
+
+
+/* PREVIOUS */
+
+projectPrev.addEventListener(
+  "click",
+  () => {
+
+    projectIndex =
+      (projectIndex - 1
+      + projectSlides.length)
+      % projectSlides.length;
+
+    updateProjectSlider();
+
+  }
+);
+
+
+/* DOT NAVIGATION */
+
+projectDots.forEach((dot) => {
+
+  dot.addEventListener(
+    "click",
+    () => {
+
+      projectIndex =
+        Number(dot.dataset.slide);
+
+      updateProjectSlider();
+
+    }
+  );
+
+});
+
+
+/* KEYBOARD NAVIGATION */
+
+document.addEventListener(
+  "keydown",
+  (event) => {
+
+    if (event.key === "ArrowRight") {
+
+      projectIndex =
+        (projectIndex + 1)
+        % projectSlides.length;
+
+      updateProjectSlider();
+
+    }
+
+
+    if (event.key === "ArrowLeft") {
+
+      projectIndex =
+        (projectIndex - 1
+        + projectSlides.length)
+        % projectSlides.length;
+
+      updateProjectSlider();
+
+    }
+
+  }
+);
+
+
+updateProjectSlider();
