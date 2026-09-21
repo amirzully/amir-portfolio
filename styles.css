@@ -603,7 +603,7 @@ h1 { max-width: 800px; font-size: clamp(3.3rem, 5.5vw, 6.5rem); letter-spacing: 
 
   font-family: "Space Grotesk", sans-serif;
 
-  font-size: 1.7rem;
+  font-size: 1.5rem;
   font-weight: 700;
 
   letter-spacing: -.035em;
@@ -611,16 +611,16 @@ h1 { max-width: 800px; font-size: clamp(3.3rem, 5.5vw, 6.5rem); letter-spacing: 
 
 
 .impact-item:last-child strong {
-  color: var(--accent);
+  color:  #f5f7fa;
 
-  font-size: 1.25rem;
+  font-size: 1.5rem;
 }
 
 
 .impact-item span {
-  color: #8496a8;
+  color: #a6d8f9;
 
-  font-size: 12px;
+  font-size: 15px;
   line-height: 1.5;
 }
 
@@ -640,7 +640,7 @@ h1 { max-width: 800px; font-size: clamp(3.3rem, 5.5vw, 6.5rem); letter-spacing: 
   transform: translateY(-3px);
 
   border-color:
-    rgba(81, 229, 194, .22);
+    rgba(245, 250, 249, 0.22);
 }
 
 
@@ -1096,45 +1096,119 @@ h1 { max-width: 800px; font-size: clamp(3.3rem, 5.5vw, 6.5rem); letter-spacing: 
 
 
 /* ==========================================================
-   LEFT / RIGHT BUTTONS
+   PROJECT NAVIGATION BUTTON
 ========================================================== */
 
 .project-nav {
-  display: grid;
+  position: relative;
 
+  display: grid;
   place-items: center;
 
-  width: 48px;
-  height: 48px;
+  width: 40px;
+  height: 40px;
 
-  border: 1px solid var(--line);
+  padding: 10px;
 
-  border-radius: 50%;
+  border: 1px solid rgba(166, 195, 222, .16);
+  border-radius: 10px;
 
   background:
-    rgba(9,22,36,.8);
+    linear-gradient(
+      145deg,
+      rgba(17,31,49,.78),
+      rgba(8,20,34,.70)
+    );
 
   color: var(--accent);
 
-  font-size: 1.25rem;
+  font-size: 0;
 
   cursor: pointer;
+
+  backdrop-filter: blur(12px);
+
+  box-shadow:
+    0 8px 25px rgba(0,0,0,.18);
 
   transition:
     transform .25s ease,
     border-color .25s ease,
-    background .25s ease;
+    background .25s ease,
+    box-shadow .25s ease;
 }
 
 
+/* arrow line */
+
+.project-nav::before {
+  content: "";
+
+  width: 10px;
+  height: 10px;
+
+  border-top: 2px solid currentColor;
+  border-right: 2px solid currentColor;
+
+  transition:
+    transform .25s ease;
+}
+
+
+/* LEFT */
+
+.project-prev::before {
+  transform: rotate(-135deg);
+}
+
+
+/* RIGHT */
+
+.project-next::before {
+  transform: rotate(45deg);
+}
+
+
+/* hover */
+
 .project-nav:hover {
-  transform: scale(1.08);
+  transform: translateY(-2px);
 
   border-color:
-    rgba(81,229,194,.35);
+    rgba(81,229,194,.42);
 
   background:
     rgba(81,229,194,.07);
+
+  box-shadow:
+    0 10px 30px rgba(81,229,194,.08);
+}
+
+
+/* left movement */
+
+.project-prev:hover::before {
+  transform:
+    translateX(-2px)
+    rotate(-135deg);
+}
+
+
+/* right movement */
+
+.project-next:hover::before {
+  transform:
+    translateX(2px)
+    rotate(45deg);
+}
+
+
+/* click */
+
+.project-nav:active {
+  transform:
+    translateY(0)
+    scale(.96);
 }
 
 

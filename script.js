@@ -101,15 +101,20 @@ const projectDots =
 const currentProject =
   document.querySelector(".current-project");
 
+const projectSlider =
+  document.querySelector(".project-slider");
+
 
 let projectIndex = 0;
+let autoSlide;
 
+
+/* UPDATE SLIDER */
 
 function updateProjectSlider() {
 
   projectTrack.style.transform =
     `translateX(-${projectIndex * 100}%)`;
-
 
   projectDots.forEach((dot, index) => {
 
@@ -120,96 +125,139 @@ function updateProjectSlider() {
 
   });
 
-
   currentProject.textContent =
-    String(projectIndex + 1)
-      .padStart(2, "0");
+    String(projectIndex + 1).padStart(2, "0");
 
 }
 
 
 /* NEXT */
 
-projectNext.addEventListener(
-  "click",
-  () => {
+function nextProject() {
 
-    projectIndex =
-      (projectIndex + 1)
-      % projectSlides.length;
+  projectIndex =
+    (projectIndex + 1) % projectSlides.length;
 
-    updateProjectSlider();
+  updateProjectSlider();
 
-  }
-);
+}
 
 
 /* PREVIOUS */
 
-projectPrev.addEventListener(
-  "click",
-  () => {
+function previousProject() {
 
-    projectIndex =
-      (projectIndex - 1
-      + projectSlides.length)
-      % projectSlides.length;
+  projectIndex =
+    (projectIndex - 1 + projectSlides.length)
+    % projectSlides.length;
 
-    updateProjectSlider();
+  updateProjectSlider();
 
-  }
-);
+}
+
+
+/* AUTO SLIDE */
+
+function startAutoSlide() {
+
+  autoSlide = setInterval(() => {
+
+    nextProject();
+
+  }, 3000);
+
+}
+
+
+function stopAutoSlide() {
+
+  clearInterval(autoSlide);
+
+}
+
+
+function restartAutoSlide() {
+
+  stopAutoSlide();
+  startAutoSlide();
+
+}
+
+
+/* BUTTON EVENTS */
+
+projectNext.addEventListener("click", () => {
+
+  nextProject();
+
+  restartAutoSlide();
+
+});
+
+
+projectPrev.addEventListener("click", () => {
+
+  previousProject();
+
+  restartAutoSlide();
+
+});
 
 
 /* DOT NAVIGATION */
 
 projectDots.forEach((dot) => {
 
-  dot.addEventListener(
-    "click",
-    () => {
+  dot.addEventListener("click", () => {
 
-      projectIndex =
-        Number(dot.dataset.slide);
+    projectIndex =
+      Number(dot.dataset.slide);
 
-      updateProjectSlider();
+    updateProjectSlider();
 
-    }
-  );
+    restartAutoSlide();
+
+  });
 
 });
 
 
-/* KEYBOARD NAVIGATION */
+/* PAUSE WHEN USER HOVERS */
 
-document.addEventListener(
-  "keydown",
-  (event) => {
-
-    if (event.key === "ArrowRight") {
-
-      projectIndex =
-        (projectIndex + 1)
-        % projectSlides.length;
-
-      updateProjectSlider();
-
-    }
-
-
-    if (event.key === "ArrowLeft") {
-
-      projectIndex =
-        (projectIndex - 1
-        + projectSlides.length)
-        % projectSlides.length;
-
-      updateProjectSlider();
-
-    }
-
-  }
+projectSlider.addEventListener(
+  "mouseenter",
+  stopAutoSlide
 );
 
 
+projectSlider.addEventListener(
+  "mouseleave",
+  startAutoSlide
+);
+
+
+/* KEYBOARD */
+
+document.addEventListener("keydown", (event) => {
+
+  if (event.key === "ArrowRight") {
+
+    nextProject();
+    restartAutoSlide();
+
+  }
+
+  if (event.key === "ArrowLeft") {
+
+    previousProject();
+    restartAutoSlide();
+
+  }
+
+});
+
+
+/* INITIAL */
+
 updateProjectSlider();
+startAutoSlide();
