@@ -1326,7 +1326,7 @@ h1 { max-width: 800px; font-size: clamp(3.3rem, 5.5vw, 6.5rem); letter-spacing: 
   width: 90px;
   height: 90px;
 
-  border-radius: 22px;
+  border-radius: 20px;
 
   border: 1px solid rgba(78,230,196,.18);
 
